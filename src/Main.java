@@ -11,7 +11,6 @@ public class Main{
         }
 
         for (int i=0; i<5; i++) {
-
             Fork leftFork = fork_list.get(i);
             Fork rightFork = null;
             try {
@@ -21,11 +20,9 @@ public class Main{
                 rightFork = fork_list.get(fork_list.size()-1);
             }
             finally {
-                Philosopher philosopher_object = new Philosopher(leftFork,rightFork);
-                philosopher_object.philosopher_number = i;
+                Philosopher philosopher_object = new Philosopher(i,leftFork,rightFork);
                 philosopher_list.add(philosopher_object);
             }
-
         }
 
         for (int i=0; i<philosopher_list.size(); i++) {
